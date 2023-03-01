@@ -1,0 +1,31 @@
+<html>
+<head>
+	<style type="text/css">
+		div{margin:0px;padding:0px;}
+		#main{width:380px;height:102px;overflow-y:auto;border:1px solid #ddd;padding:0 10px 0 10px;}
+		#content{width:350px;line-height:20px;}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var i=1;
+			var hid=document.getElementById('msg_end');//隐藏在消息框下面的元素
+			var btn=document.getElementById('btnSend');//添加消息的按钮
+			var cont=document.getElementById('content');//消息框
+			var mai=document.getElementById('main');
+			btn.onclick=function(){
+				cont.innerHTML+='消息内容'+i+'<br/>';
+			hid.scrollIntoView(false);//方式1通过调用隐藏元素的scrollIntoView()方法使其可见
+			//mai.scrollTop=mai.scrollHeight;//方式2通过设置滚动高度
+				i++;
+			}
+		}
+	</script>
+</head>
+<body>
+<div id="main">
+	<div id="content"></div>
+	<span id="msg_end" style="overflow:hidden"></span>
+</div>
+<input type="button" id="btnSend" value="添加"/>
+</body>
+</html>
